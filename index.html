@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #heading {
+        text-align: center;
+        margin: 40px;
+      }
+      body {
+        background-color: rgb(211, 190, 190);
+      }
+      .display {
+        height: 25vh;
+        width: 50vw;
+        font-size: 150px;
+        text-align: center;
+      }
+      .count-box {
+        border: 1px solid black;
+        height: 60vh;
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .btns {
+        width: 8rem;
+        font-size: 1.6rem;
+        border-radius: 8px;
+        border: none;
+        margin: 15px;
+        background-color: azure;
+      }
+
+      @media screen and (max-width: 480px) {
+        .count-box {
+          height: 70vh;
+          width: 75vw;
+        }
+        .btns {
+          width: 100px;
+          font-size: 1.4rem;
+        }
+        .buttons {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="heading">Counter</h1>
+      <div class="container">
+        <div class="count-box">
+          <div id="text" class="display">0</div>
+          <div class="buttons">
+            <button id="btn1" onclick="increment()" class="btns">
+              increase
+            </button>
+            <button id="btn2" onclick="decrement()" class="btns">
+              decrease
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let inc = document.getElementById("btn1");
+      let dec = document.getElementById("btn2");
+      let txt = document.getElementById("text");
+
+      function increment() {
+        txt.innerText++;
+      }
+      function decrement() {
+        txt.innerText--;
+      }
+    </script>
+  </body>
+</html>
